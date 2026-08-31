@@ -4,7 +4,10 @@
   "status": "verified",
   "kind": "principle",
   "title": "激励的行为力量容易被系统性低估",
-  "corpus_ids": ["CU-1995-PSYCH-0001"],
+  "corpus_ids": [
+    "CU-1995-PSYCH-0001",
+    "CU-2019-WSJ-0001"
+  ],
   "models": [],
   "source": {
     "tier": "B",
@@ -20,7 +23,10 @@
     "attribution_checked": true,
     "duplicate_checked": true,
     "causality_checked": true,
-    "reviewers": ["codex-independent-verifier:/root/rd_0001_verifier"],
+    "reviewers": [
+      "codex-independent-verifier:/root/rd_0001_verifier",
+      "codex-independent-verifier:/root/rd_0001_verifier (phase-1c-batch3)"
+    ],
     "reviewed_at": "2026-08-31",
     "rejection_reason": null
   }
@@ -31,7 +37,11 @@
 
 ## 原话
 
-见 Corpus：`CU-1995-PSYCH-0001`。
+见 Corpus：`CU-1995-PSYCH-0001`、`CU-2019-WSJ-0001`。
+
+2019 年 WSJ 已编辑访谈表明，Munger 持续认为过强激励可能使人屈从，而管理层也可能忽略激励制度本身的问题。
+
+这只证明 Munger 的持续观点，不独立验证 Wells Fargo 的违规原因、管理层责任或排他因果。
 
 ## 原理
 
@@ -47,4 +57,5 @@ AI 推断：判断一个制度时，不能只看参与者宣称的动机，还�
 
 ## 出处
 
-Whitney Tilson 整理的 1995 年 Harvard 演讲文本，证据等级 `B`；准确日期和原始录音尚未确认。
+- 1995 年 Harvard 演讲：Whitney Tilson 整理文本，证据等级 `B`；准确日期和原始录音尚未确认。
+- 2019 年 WSJ 已编辑访谈：https://worldlypartners.com/wp-content/uploads/2024/01/2019-charlie-munger-unplugged-interview-with-wsj.pdf，公开 PDF pp. 2-3，证据等级 `B`。它是观点补强，不是 Wells Fargo 案例的独立事实调查。

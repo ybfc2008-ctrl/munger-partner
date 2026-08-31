@@ -4,7 +4,10 @@
   "status": "verified",
   "kind": "principle",
   "title": "用多学科模型网络组织事实与经验",
-  "corpus_ids": ["CU-1994-USC-0001"],
+  "corpus_ids": [
+    "CU-1994-USC-0001",
+    "CU-2016-DJCO-0001"
+  ],
   "models": ["M01"],
   "source": {
     "tier": "B",
@@ -20,7 +23,10 @@
     "attribution_checked": true,
     "duplicate_checked": true,
     "causality_checked": true,
-    "reviewers": ["codex-independent-final-verifier:/root/usc_1994_final_verifier"],
+    "reviewers": [
+      "codex-independent-final-verifier:/root/usc_1994_final_verifier",
+      "codex-independent-verifier:/root/rd_0001_verifier (phase-1c-batch3)"
+    ],
     "reviewed_at": "2026-08-31",
     "rejection_reason": null
   }
@@ -31,7 +37,7 @@
 
 ## 原话
 
-见 Corpus：`CU-1994-USC-0001`。上层不重复复制原文，以该 L1 单元为证据锚点。
+见 Corpus：`CU-1994-USC-0001`、`CU-2016-DJCO-0001`。上层不重复复制原文，以这两个 L1 单元为证据锚点。
 
 ## 原理
 
@@ -45,8 +51,11 @@ AI 推断：孤立事实需要被组织成可用的理解，但组织它们的�
 
 AI 推断（项目规范）：“多个模型”不等于堆砌术语，也不表示广度可以替代领域专长。若某个模型不能改变可检验的判断，就不应为了显得完整而加入。
 
+2016 年证据进一步限定：对多数人，专精仍是主要职业能力；跨学科综合是部分人的补充能力，也是避免在其他生活领域被突袭的防御性第二层。
+
 ## 出处
 
 - Drive 版本：*Outstanding Investor Digest*, May 5, 1995 reprint，目录第 3 节；扫描件印刷页码 38。
 - 公开对照：https://fs.blog/great-talks/a-lesson-on-worldly-wisdom/
-- 证据等级：`B`。尚未找到 USC 官方记录或可验证的 1994 年演讲录音；该限制不影响本条已经通过的 Verified 状态。
+- 2016 补强证据：https://tilsonfunds.com/MungerDJ-2-16.pdf，文件第 8 页 / 印刷第 8 页；具名 transcript，证据等级 `B`。
+- 两组证据均为 `B`。尚未找到 USC 官方记录或可验证的 1994 年演讲录音；2016 transcript 也未在本轮与原始录音对齐。这些限制不影响本条已经通过的 Verified 状态。
