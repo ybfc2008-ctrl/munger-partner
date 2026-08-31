@@ -4,7 +4,11 @@
   "status": "verified",
   "kind": "principle",
   "title": "主动用反证更新重要信念",
-  "corpus_ids": ["CU-2020-DJCO-0001"],
+  "corpus_ids": [
+    "CU-2020-DJCO-0001",
+    "CU-2021-DJCO-0001",
+    "CU-2023-ACQUIRED-0001"
+  ],
   "models": [],
   "source": {
     "tier": "B",
@@ -20,7 +24,9 @@
     "attribution_checked": true,
     "duplicate_checked": true,
     "causality_checked": true,
-    "reviewers": ["codex-independent-verifier:/root/rd_0001_verifier"],
+    "reviewers": [
+      "codex-independent-verifier:/root/rd_0001_verifier"
+    ],
     "reviewed_at": "2026-08-31",
     "rejection_reason": null
   }
@@ -31,7 +37,11 @@
 
 ## 原话
 
-见 Corpus：`CU-2020-DJCO-0001`。
+见 Corpus：`CU-2020-DJCO-0001`、`CU-2021-DJCO-0001`、`CU-2023-ACQUIRED-0001`。
+
+2021 年证据直接支持准确呈现反方论证并主动寻找削弱原结论的证据。
+
+2023 年证据只支持识别错误后及时退出，不支持主动寻找反证。
 
 ## 原理
 
@@ -47,4 +57,6 @@ AI 推断：理性不只是被动承认错误，而是主动寻找、识别并�
 
 ## 出处
 
-CNBC 记录的 2020 Daily Journal 年会及公开对照文本。录音本身是 `A` 级原始来源；当前摘录在完成时间戳对齐前按 `B` 级文本证据处理。
+- 2020 Daily Journal 年会：公开对照 transcript PDF p. 16, lines 514-530；录影时间戳尚未对齐，摘录按 `B` 级处理。
+- 2021 Daily Journal 年会：https://worldlypartners.com/wp-content/uploads/2024/01/2021-daily-journal-corp-annual-meeting-transcript-of-charlie-mungers-remarks.pdf，p. 16, extracted lines 508-520；录影时间戳尚未对齐，摘录按 `B` 级处理。
+- 2023 Acquired 访谈：https://www.youtube.com/watch?v=w6qRb171cog，`00:10:34–00:11:03`；第三方时间戳文本用于定位且本轮未独立复听，摘录按 `B` 级处理。该条只是 Munger 的回顾性自述，实际结果与反事实未在本单元独立核验。

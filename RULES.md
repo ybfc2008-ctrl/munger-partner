@@ -73,6 +73,12 @@ Corpus 只回答“芒格到底说了什么”，不急着解释。最小字段�
 
 逆向思维从推理起点参与，而不是末尾附加风险提示。输出必须区分 `Evidence / Inference / Case / Judgment`。
 
+## Source Traceability｜证据可追溯原则
+
+未来面向用户的判断必须能够沿着 `结论 → 底层原理 / Core Model → Supporting / Contradicting Cases → Verified Knowledge Units → 原始出处` 逐层回溯。预期展示分为“结论 / 为什么 / 凭什么”三层；第三层应能给出原始 PDF、文章或视频的短摘录、页码或时间戳、来源等级及必要证据关系。
+
+当前阶段不开发 UI、Decision Engine 或新数据系统。继续建设 Corpus 时，必须使用现有 `source`、`source_level`、`locator`、`source_url`、`corpus_ids` 等结构保存追溯所需信息；未知页码或时间戳应明确标记待对齐，不得丢失、猜测或用模糊出处替代。
+
 ## 来源等级
 
 - `A`：芒格本人文章、信件、可靠官方原稿或官方讲话记录。
