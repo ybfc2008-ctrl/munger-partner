@@ -26,7 +26,10 @@ munger-partner/
 ├── rejected/                     # 拒绝条目及理由
 ├── models/                       # L2：最小核心模型集合
 ├── cases/                        # L3：失败案例优先，多对多映射
+│   └── real-decisions/           # 真实决策实验：Candidate 与 Verified 分离
 ├── decision-engine/              # L4：逆向决策流程
+├── research-packs/               # 一次研究的证据与反证资产
+├── content/                      # Master Content 与反馈，不含自动发布
 ├── index/                        # 派生检索索引，可重建
 ├── sources/                      # Drive 与公开来源登记表
 ├── reviews/                      # 独立逆向审查记录
@@ -63,6 +66,8 @@ python3 scripts/validate_corpus.py
 所有资料先登记在 [`sources/source-manifest.csv`](sources/source-manifest.csv)。它区分官方原件、可回查转录、署名笔记和二手线索；来源登记通过不等于知识条目已经验证。
 
 首个 1994 USC MVP 的范围、审查轨迹、北极星指标和剩余缺口见 [`MVP-1994-USC.md`](MVP-1994-USC.md)。
+
+知识资产与内容生产的补充规则见 [`CONTENT-RULES.md`](CONTENT-RULES.md)。内容必须从 Verified 资产派生，不能先写稿再倒推证据。
 
 ## 重要声明
 

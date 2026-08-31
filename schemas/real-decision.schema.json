@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Munger Partner Real Decision",
+  "type": "object",
+  "required": ["id", "status", "source_level", "corpus_ids", "model_ids"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^RD-[0-9]{4,}$"},
+    "status": {"enum": ["candidate", "verified", "rejected"]},
+    "source_level": {"enum": ["A", "B", "C", "NEEDS_REVIEW"]},
+    "corpus_ids": {"type": "array", "items": {"type": "string", "pattern": "^CU-"}, "uniqueItems": true},
+    "model_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  }
+}

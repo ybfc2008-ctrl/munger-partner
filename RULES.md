@@ -96,6 +96,10 @@ Corpus 只回答“芒格到底说了什么”，不急着解释。最小字段�
 - 外部 Munger Skill 只用于借鉴多 Agent、蒸馏、决策规则、外部批评和 Skill 结构。
 - 两者都不能直接成为本项目的事实库；任何事实仍须进入本项目的 L0/L1 证据链。
 
+## 知识资产与内容飞轮
+
+内容生产遵守 [`CONTENT-RULES.md`](CONTENT-RULES.md)。研究必须先沉淀为 `Research Pack → Evidence → Real Decision → Models 关系 → Verified`，才能生成 `Master Content` 和平台版本。内容是知识资产的传播形式，不得成为绕过证据与审查门的捷径。
+
 ## 第一阶段边界
 
 暂不做网站、App、复杂 UI、收费系统、语音克隆、300 个模型、全世界案例收集或 100% Corpus 覆盖。第一阶段只验证原始资料能否可靠地变成高质量、可追溯、可用于决策的知识。
@@ -131,6 +135,6 @@ Corpus 只回答“芒格到底说了什么”，不急着解释。最小字段�
 
 ## 冲突顺序
 
-`RULES.md` > Verified 原始证据 > Skill 工作流 > 项目文档 > Candidate/外部二手内容。
+`RULES.md` > `CONTENT-RULES.md` > Verified 原始证据 > Skill 工作流 > 项目文档 > Candidate/外部二手内容。
 
 规则发生变化时，应通过 Pull Request 说明原因、风险与迁移影响；不得静默放宽证据标准。

@@ -50,6 +50,16 @@ class CorpusValidatorTest(unittest.TestCase):
             errors = VALIDATOR.validate_corpus_unit(path)
         self.assertTrue(any("higher-layer" in error for error in errors))
 
+    def test_real_decision_template_is_valid_candidate(self) -> None:
+        path = ROOT / "templates" / "real-decision.md"
+        self.assertEqual(VALIDATOR.validate_real_decision(path, "candidate"), [])
+
+    def test_unreviewed_real_decision_cannot_be_verified(self) -> None:
+        path = ROOT / "templates" / "real-decision.md"
+        errors = VALIDATOR.validate_real_decision(path, "verified")
+        self.assertTrue(any("status must be 'verified'" in error for error in errors))
+        self.assertTrue(any("NEEDS_REVIEW" in error for error in errors))
+
 
 if __name__ == "__main__":
     unittest.main()

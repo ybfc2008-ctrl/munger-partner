@@ -11,7 +11,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CORPUS = ROOT / "corpus"
 VALID_STATUS = {"candidates": "candidate", "verified": "verified", "rejected": "rejected"}
+REAL_DECISIONS = ROOT / "cases" / "real-decisions"
+REAL_DECISION_STATUS = {"candidates": "candidate", "verified": "verified", "rejected": "rejected"}
 REQUIRED_SECTIONS = ["原话", "原理", "反例", "边界", "出处"]
+REAL_DECISION_SECTIONS = ["问题", "发生了什么", "关键错误", "原理", "警报", "关联模型", "反证 / 边界", "来源"]
 ID_RE = re.compile(r"^KU-[0-9]{4,}$")
 
 
@@ -140,6 +143,40 @@ def validate_corpus_unit(path: Path) -> list[str]:
     return errors
 
 
+def validate_real_decision(path: Path, expected_status: str) -> list[str]:
+    errors: list[str] = []
+    try:
+        meta = frontmatter(path)
+    except (OSError, ValueError) as exc:
+        return [str(exc)]
+    for field in ("id", "status", "source_level", "corpus_ids", "model_ids"):
+        if field not in meta:
+            errors.append(f"missing field: {field}")
+    if not re.fullmatch(r"RD-[0-9]{4,}", str(meta.get("id", ""))):
+        errors.append("real decision id must match RD-0001")
+    if meta.get("status") != expected_status:
+        errors.append(f"status must be {expected_status!r} in this directory")
+    if meta.get("source_level") not in {"A", "B", "C", "NEEDS_REVIEW"}:
+        errors.append("source_level must be A, B, C, or NEEDS_REVIEW")
+    if expected_status == "verified" and meta.get("source_level") == "NEEDS_REVIEW":
+        errors.append("verified Real Decision cannot have NEEDS_REVIEW evidence")
+    if not isinstance(meta.get("corpus_ids"), list):
+        errors.append("corpus_ids must be an array")
+    if not isinstance(meta.get("model_ids"), list):
+        errors.append("model_ids must be an array")
+    body = meta.get("_body", "")
+    positions = []
+    for section in REAL_DECISION_SECTIONS:
+        index = body.find(f"## {section}")
+        if index < 0:
+            errors.append(f"missing Real Decision section: {section}")
+        positions.append(index)
+    existing = [position for position in positions if position >= 0]
+    if existing != sorted(existing):
+        errors.append("Real Decision sections are out of order")
+    return errors
+
+
 def main() -> int:
     failures = 0
     seen: dict[str, Path] = {}
@@ -178,6 +215,18 @@ def main() -> int:
                 errors.append(f"duplicate id; first seen in {seen[unit_id].relative_to(ROOT)}")
             elif unit_id:
                 seen[unit_id] = path
+            if errors:
+                failures += 1
+                print(f"FAIL {path.relative_to(ROOT)}")
+                for error in errors:
+                    print(f"  - {error}")
+            else:
+                print(f"OK   {path.relative_to(ROOT)}")
+
+    for folder, status in REAL_DECISION_STATUS.items():
+        for path in sorted((REAL_DECISIONS / folder).glob("*.md")):
+            files += 1
+            errors = validate_real_decision(path, status)
             if errors:
                 failures += 1
                 print(f"FAIL {path.relative_to(ROOT)}")
