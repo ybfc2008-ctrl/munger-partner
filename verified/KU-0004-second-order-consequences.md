@@ -4,7 +4,7 @@
   "status": "verified",
   "kind": "principle",
   "title": "一阶结论正确，不代表总体判断正确",
-  "corpus_ids": ["CU-2017-MICHIGAN-0001"],
+  "corpus_ids": ["CU-2017-MICHIGAN-0001", "CU-2003-UCSB-0001"],
   "models": [],
   "source": {
     "tier": "B",
@@ -20,7 +20,7 @@
     "attribution_checked": true,
     "duplicate_checked": true,
     "causality_checked": true,
-    "reviewers": ["codex-independent-verifier:/root/rd_0001_verifier"],
+    "reviewers": ["codex-independent-verifier:/root/rd_0001_verifier", "codex-independent-final-verifier:/root/usc_1994_final_verifier (phase-1c-batch5)"],
     "reviewed_at": "2026-08-31",
     "rejection_reason": null
   }
@@ -31,7 +31,9 @@
 
 ## 原话
 
-见 Corpus：`CU-2017-MICHIGAN-0001`。
+见 Corpus：`CU-2017-MICHIGAN-0001`、`CU-2003-UCSB-0001`。
+
+2003 年 B 级文本直接补充：后果还会继续产生后果，但没有说明所有后续影响都应无限纳入。
 
 ## 原理
 
@@ -48,3 +50,5 @@ AI 推断：一个政策或选择可能实现直接效果，同时通过后续�
 ## 出处
 
 Michigan Ross 2017 官方录影及公开可复现的对照文本（PDF p. 11），证据等级暂为 `B`；待补精确视频时间戳。Munger 对中美贸易的具体判断仅是来源中的个人观点，不是本条已经验证的事实。
+
+2003 补充来源：Whitney Tilson 具名、后来经 speaker 轻度编辑的 [UCSB transcript](https://tilsonfunds.com/MungerUCSBspeech.pdf)，文件第 17 页 / 印刷第 14 页，证据等级 `B`。本单元不验证其后的 Medicare 数字或具体因果叙述。
