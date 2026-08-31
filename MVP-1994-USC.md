@@ -18,7 +18,7 @@ This is a pipeline proof, not a claim that the whole 1994 lecture has been disti
 
 ### Compression
 
-`Not yet measurable.` The owner-approved core-model registry is intentionally empty. The pipeline keeps `models: []` and records `UNKNOWN_NO_APPROVED_MODEL_REGISTRY` instead of inventing a model.
+The owner approved `M01 — 多元思维模型格栅 / Latticework of Mental Models` and mapped `KU-0001` to it. With only one approved model and one Verified unit, compression is not yet meaningfully measurable.
 
 ### Correction capability
 
@@ -30,9 +30,9 @@ Two promotion attempts were blocked before the third independent verification pa
 - No verified recording is known; public transcripts only corroborate the `B` source.
 - Chinese translation remains `ai_draft`.
 - No verified historical failure case has been attached.
-- No canonical core model has been approved.
+- Only one canonical core model has been approved; no additional model may be inferred from this MVP.
 - The remaining lecture sections have not been promoted into L1/L2 knowledge units.
 
 ## Gate for the next source
 
-Do not begin 1995 Psychology until the owner accepts this MVP's structure and decides whether `KU-0001` maps to an approved core model. The 1994 source may continue to produce additional Candidates, but each must repeat the same independent review gates.
+The owner accepted the MVP structure and mapped `KU-0001` to `M01`. The next source must still repeat independent review gates, while functionally overlapping Critic / Verifier roles should be merged rather than multiplied.

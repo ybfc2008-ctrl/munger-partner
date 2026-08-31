@@ -91,7 +91,7 @@ Master Content 包含：核心问题、核心故事、关键证据、底层原�
 
 重要选题可按需并行研究：历史失败、商业/投资失败、Munger Corpus 原始证据、反证、硬科学/心理学/经济学机制、传播结构，最后由 Editor 汇总。角色和数量不固定；简单问题不得为了形式启动多个 Agent。
 
-任何 Agent 都只能生成 Candidate。Critic、Verifier 和人类最终判断不得由同一生产者角色替代。
+任何 Agent 都只能生成 Candidate。Critic、Verifier 和人类最终判断不得由同一生产者角色替代。Critic / Verifier / Final Verifier 如出现明显功能重复，优先合并；默认只保留一次独立 Critic 与一次独立 Verifier，不为形式增加 Agent。
 
 ## 内容反馈数据库
 

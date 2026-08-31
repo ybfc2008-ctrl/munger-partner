@@ -5,7 +5,7 @@
   "kind": "principle",
   "title": "用多学科模型网络组织事实与经验",
   "corpus_ids": ["CU-1994-USC-0001"],
-  "models": [],
+  "models": ["M01"],
   "source": {
     "tier": "B",
     "speaker_or_author": "Charlie Munger",
@@ -49,4 +49,4 @@ AI 推断（项目规范）：“多个模型”不等于堆砌术语，也不�
 
 - Drive 版本：*Outstanding Investor Digest*, May 5, 1995 reprint，目录第 3 节；扫描件印刷页码 38。
 - 公开对照：https://fs.blog/great-talks/a-lesson-on-worldly-wisdom/
-- 证据等级：`B`。尚未找到 USC 官方记录或可验证的 1994 年演讲录音，因此本条保持 Candidate。
+- 证据等级：`B`。尚未找到 USC 官方记录或可验证的 1994 年演讲录音；该限制不影响本条已经通过的 Verified 状态。

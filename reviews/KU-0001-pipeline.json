@@ -7,7 +7,7 @@
     "chunker": "complete",
     "corpus": "candidate",
     "extractor": "complete",
-    "model_mapper": "UNKNOWN_NO_APPROVED_MODEL_REGISTRY",
+    "model_mapper": "M01_OWNER_APPROVED",
     "case_matcher": "UNKNOWN_NO_VERIFIED_CASE",
     "critic": "revise",
     "revision": "complete",
@@ -18,7 +18,7 @@
   },
   "notes": [
     "The private full-text extraction is not redistributed.",
-    "An empty models array is deliberate, not missing data.",
+    "The project owner formally mapped KU-0001 to M01.",
     "No counterexample was fabricated to fill the Case Matcher stage."
   ]
 }
