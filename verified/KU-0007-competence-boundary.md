@@ -4,7 +4,7 @@
   "status": "verified",
   "kind": "principle",
   "title": "把能力边界作为重大判断的检查项",
-  "corpus_ids": ["CU-2020-CALTECH-0001"],
+  "corpus_ids": ["CU-2020-CALTECH-0001", "CU-2022-DJCO-0001"],
   "models": [],
   "source": {
     "tier": "B",
@@ -20,7 +20,7 @@
     "attribution_checked": true,
     "duplicate_checked": true,
     "causality_checked": true,
-    "reviewers": ["codex-independent-verifier:/root/rd_0001_verifier"],
+    "reviewers": ["codex-independent-verifier:/root/rd_0001_verifier", "codex-independent-final-verifier:/root/usc_1994_final_verifier (phase-1c-batch4)"],
     "reviewed_at": "2026-08-31",
     "rejection_reason": null
   }
@@ -31,7 +31,9 @@
 
 ## 原话
 
-见 Corpus：`CU-2020-CALTECH-0001`。
+见 Corpus：`CU-2020-CALTECH-0001`、`CU-2022-DJCO-0001`。
+
+2022 年 B 级文本在投资选择语境中补充：本人或顾问的能力水平应进入判断；它不把任何具体投资风格判为普遍最优。
 
 ## 原理
 
@@ -47,4 +49,6 @@ AI 推断：对重要问题，应同时检查自己是否具有可靠理解它�
 
 ## 出处
 
-Caltech 官方活动与录影，以及公开对照文本。录影本身是 `A` 级原始来源；当前摘录在完成时间戳对齐前按 `B` 级文本证据处理。本条暂不关联任何核心模型。
+Caltech 官方活动与录影，以及公开对照文本。录影本身是 `A` 级原始来源；当前摘录在完成时间戳对齐前按 `B` 级文本证据处理。
+
+2022 补充来源：Richard Lewis 具名 [Daily Journal 年会 transcript](https://worldlypartners.com/wp-content/uploads/2024/01/2022-daily-journal-corp-annual-meeting-transcript-of-charlie-mungers-remarks.pdf)，文件 pp. 27-28，`B` 级文字证据。主持人问题经概括，摘录尚未与 Yahoo Finance 官方录影时间戳对齐。本条暂不关联任何核心模型。
