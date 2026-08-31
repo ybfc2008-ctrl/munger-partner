@@ -4,9 +4,10 @@
   "status": "candidate",
   "kind": "principle",
   "title": "替换为候选标题",
+  "corpus_ids": ["CU-SOURCE-0001"],
   "models": ["existing-model-id"],
   "source": {
-    "tier": "lead",
+    "tier": "D",
     "speaker_or_author": "待核实",
     "title": "待核实",
     "date": null,

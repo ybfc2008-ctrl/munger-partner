@@ -35,7 +35,7 @@ def validate(path: Path, expected_status: str) -> list[str]:
     except (OSError, ValueError) as exc:
         return [str(exc)]
 
-    for field in ("id", "status", "kind", "title", "models", "source", "review"):
+    for field in ("id", "status", "kind", "title", "corpus_ids", "models", "source", "review"):
         if field not in meta:
             errors.append(f"missing field: {field}")
 
@@ -47,6 +47,11 @@ def validate(path: Path, expected_status: str) -> list[str]:
         errors.append("invalid kind")
     if not isinstance(meta.get("models"), list):
         errors.append("models must be an array")
+    corpus_ids = meta.get("corpus_ids")
+    if not isinstance(corpus_ids, list) or not corpus_ids:
+        errors.append("corpus_ids must be a non-empty array")
+    elif any(not isinstance(item, str) or not item.startswith("CU-") for item in corpus_ids):
+        errors.append("every corpus_ids item must start with CU-")
 
     source = meta.get("source", {})
     if not isinstance(source, dict):
@@ -55,8 +60,8 @@ def validate(path: Path, expected_status: str) -> list[str]:
     for field in ("tier", "speaker_or_author", "title", "locator"):
         if field not in source:
             errors.append(f"missing source.{field}")
-    if source.get("tier") not in {"primary", "secondary", "lead"}:
-        errors.append("source.tier must be primary, secondary, or lead")
+    if source.get("tier") not in {"A", "B", "C", "D"}:
+        errors.append("source.tier must be A, B, C, or D")
 
     review = meta.get("review", {})
     if not isinstance(review, dict):
@@ -73,8 +78,8 @@ def validate(path: Path, expected_status: str) -> list[str]:
         reviewers = []
 
     if expected_status == "verified":
-        if source.get("tier") == "lead":
-            errors.append("verified unit cannot use a lead-only source")
+        if source.get("tier") == "D":
+            errors.append("verified unit cannot rely on D-only evidence")
         if not all(review.get(field) is True for field in checks):
             errors.append("all review checks must be true for verified units")
         if not reviewers:
@@ -101,12 +106,68 @@ def validate(path: Path, expected_status: str) -> list[str]:
     return errors
 
 
+def validate_corpus_unit(path: Path) -> list[str]:
+    errors: list[str] = []
+    try:
+        meta = frontmatter(path)
+    except (OSError, ValueError) as exc:
+        return [str(exc)]
+
+    required = (
+        "id", "source_id", "verification_status", "speaker", "date", "locator",
+        "source_level", "source_url", "original_language", "translation_status",
+    )
+    for field in required:
+        if field not in meta:
+            errors.append(f"missing field: {field}")
+    if not str(meta.get("id", "")).startswith("CU-"):
+        errors.append("corpus id must start with CU-")
+    if not str(meta.get("source_id", "")).startswith("MTP-"):
+        errors.append("source_id must start with MTP-")
+    if meta.get("verification_status") not in {"candidate", "verified", "rejected"}:
+        errors.append("invalid verification_status")
+    if meta.get("source_level") not in {"A", "B", "C", "D"}:
+        errors.append("source_level must be A, B, C, or D")
+    if meta.get("translation_status") not in {"not_needed", "ai_draft", "human_checked"}:
+        errors.append("invalid translation_status")
+    body = meta.get("_body", "")
+    if "## 原文" not in body or "## 中文" not in body:
+        errors.append("corpus unit must contain 原文 and 中文 sections")
+    forbidden = ("## 原理", "## 反例", "## 边界", "## 决策", "## 建议")
+    for heading in forbidden:
+        if heading in body:
+            errors.append(f"L1 corpus cannot contain higher-layer section: {heading[3:]}")
+    return errors
+
+
 def main() -> int:
     failures = 0
     seen: dict[str, Path] = {}
     files = 0
+
+    for path in sorted(CORPUS.rglob("*.md")):
+        if path.name == "README.md":
+            continue
+        files += 1
+        errors = validate_corpus_unit(path)
+        try:
+            unit_id = frontmatter(path).get("id")
+        except (OSError, ValueError):
+            unit_id = None
+        if unit_id in seen:
+            errors.append(f"duplicate id; first seen in {seen[unit_id].relative_to(ROOT)}")
+        elif unit_id:
+            seen[unit_id] = path
+        if errors:
+            failures += 1
+            print(f"FAIL {path.relative_to(ROOT)}")
+            for error in errors:
+                print(f"  - {error}")
+        else:
+            print(f"OK   {path.relative_to(ROOT)}")
+
     for folder, status in VALID_STATUS.items():
-        for path in sorted((CORPUS / folder).glob("*.md")):
+        for path in sorted((ROOT / folder).glob("*.md")):
             files += 1
             errors = validate(path, status)
             try:

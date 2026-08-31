@@ -14,7 +14,15 @@ REQUIRED = {
     "evidence_level", "canonical_url", "ingest_status", "public_policy", "next_action",
 }
 LEVELS = {"A-primary", "B-traceable-transcript", "C-named-notes", "D-lead"}
-STATUSES = {"ready_candidate", "needs_source", "needs_ocr", "reference_only", "missing_local"}
+STATUSES = {
+    "ready_candidate",
+    "candidate_created",
+    "verified_sample",
+    "needs_source",
+    "needs_ocr",
+    "reference_only",
+    "missing_local",
+}
 POLICIES = {"link_and_excerpt", "metadata_only"}
 
 

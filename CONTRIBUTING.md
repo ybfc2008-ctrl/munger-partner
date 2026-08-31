@@ -8,7 +8,7 @@
 2. 从 `templates/knowledge-unit.md` 创建条目，状态必须是 `candidate`。
 3. 附上可访问来源和精确定位；不要只给搜索结果、语录图片或 AI 摘要。
 4. 运行 `python3 scripts/validate_corpus.py`。
-5. Pull Request 中说明它应归入哪个已有模型，以及最强反证是什么。
+5. Pull Request 中说明它应归入哪个已批准模型；没有批准模型时写 `UNKNOWN`，不得临时造名。同时写出最强反证。
 
 Candidate 的作者不得同时作为最终审查者。维护者核对原始来源后，才能把状态和路径改为 `verified`。
 

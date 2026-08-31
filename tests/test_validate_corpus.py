@@ -37,6 +37,19 @@ class CorpusValidatorTest(unittest.TestCase):
         payload = text.split("---", 2)[1]
         self.assertEqual(json.loads(payload)["id"], "KU-0001")
 
+    def test_l1_corpus_unit_is_valid(self) -> None:
+        path = ROOT / "corpus" / "MTP-1994-USC" / "chunks" / "CU-1994-USC-0001.md"
+        self.assertEqual(VALIDATOR.validate_corpus_unit(path), [])
+
+    def test_l1_rejects_model_explanation(self) -> None:
+        source = ROOT / "corpus" / "MTP-1994-USC" / "chunks" / "CU-1994-USC-0001.md"
+        text = source.read_text(encoding="utf-8") + "\n## 原理\n\n不应出现在 L1。\n"
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "polluted.md"
+            path.write_text(text, encoding="utf-8")
+            errors = VALIDATOR.validate_corpus_unit(path)
+        self.assertTrue(any("higher-layer" in error for error in errors))
+
 
 if __name__ == "__main__":
     unittest.main()

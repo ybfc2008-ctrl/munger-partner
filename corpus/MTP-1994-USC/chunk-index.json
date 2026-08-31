@@ -1,0 +1,18 @@
+[
+  {"id":"MTP-1994-USC-CHUNK-0001","source_id":"MTP-1994-USC","start_line":1,"end_line":132,"sha256":"85c53ba58deda7415b6fc53039ef6a66d33a9759384192f2b109d952c38420e0"},
+  {"id":"MTP-1994-USC-CHUNK-0002","source_id":"MTP-1994-USC","start_line":133,"end_line":208,"sha256":"e1eaeaeff17c31b546536a6fc9b46693071083b411d16db6e3d8e661558d8ec9"},
+  {"id":"MTP-1994-USC-CHUNK-0003","source_id":"MTP-1994-USC","start_line":209,"end_line":286,"sha256":"9523dfbc98677f03f31e53935bb516c0815986c079e41bc1d45486a5613d566a"},
+  {"id":"MTP-1994-USC-CHUNK-0004","source_id":"MTP-1994-USC","start_line":287,"end_line":364,"sha256":"162dc6b944ea80fec1cbd4b3ee50b72d7b3374caac48da1acec820a22e14ac10"},
+  {"id":"MTP-1994-USC-CHUNK-0005","source_id":"MTP-1994-USC","start_line":365,"end_line":441,"sha256":"1e046a77897f61f58324c6caa6ba1dd7bdbf2943307add969ffd9b71719a5607"},
+  {"id":"MTP-1994-USC-CHUNK-0006","source_id":"MTP-1994-USC","start_line":442,"end_line":513,"sha256":"1e65c79f8d9ad57f3953244d6c8830eeaa82617fce224113e36ca434c0f83673"},
+  {"id":"MTP-1994-USC-CHUNK-0007","source_id":"MTP-1994-USC","start_line":514,"end_line":588,"sha256":"805d93350d82107be5a09ff6dc93b352f95d9afe52add0e2d4253b6e1618fcde"},
+  {"id":"MTP-1994-USC-CHUNK-0008","source_id":"MTP-1994-USC","start_line":589,"end_line":668,"sha256":"4b79528e3a829b688c4d161304c7380a90e5d5e1c8930f06be98a3f8468cb1d9"},
+  {"id":"MTP-1994-USC-CHUNK-0009","source_id":"MTP-1994-USC","start_line":669,"end_line":748,"sha256":"5a4d2dd3360119b55a095daa354ccf18f1498def4242435e113ea41c385d0590"},
+  {"id":"MTP-1994-USC-CHUNK-0010","source_id":"MTP-1994-USC","start_line":749,"end_line":820,"sha256":"8f805a76f053ec6d3173c1553a92656f6ec6071aeedd6c149f5ca46bf8622b9c"},
+  {"id":"MTP-1994-USC-CHUNK-0011","source_id":"MTP-1994-USC","start_line":821,"end_line":892,"sha256":"9e329095d7f53953200da640a1b558e5f7f3fc36919801ecd395c64d30a194df"},
+  {"id":"MTP-1994-USC-CHUNK-0012","source_id":"MTP-1994-USC","start_line":893,"end_line":964,"sha256":"4f2f6e4d01b4ac227953848fb0ab6a0d0019b0f6667c95faa7e3149593a59217"},
+  {"id":"MTP-1994-USC-CHUNK-0013","source_id":"MTP-1994-USC","start_line":965,"end_line":1042,"sha256":"4ca36f50ab160c92342425b341e262b864b67f65ea357344281aa23586f379aa"},
+  {"id":"MTP-1994-USC-CHUNK-0014","source_id":"MTP-1994-USC","start_line":1043,"end_line":1119,"sha256":"feb1f874656edf9d9d1f7820a55e3f9018595894bb4a5feb7020dcf2aff719ee"},
+  {"id":"MTP-1994-USC-CHUNK-0015","source_id":"MTP-1994-USC","start_line":1120,"end_line":1197,"sha256":"970bcc689f9d2f3712968936a2f2abe73151f6973029de9bcd284154a1e5922e"},
+  {"id":"MTP-1994-USC-CHUNK-0016","source_id":"MTP-1994-USC","start_line":1198,"end_line":1227,"sha256":"873921ce30f7c0b09fecff28ab576082c3c3bf4a014cf8c1b1537d0c9a559d23"}
+]

@@ -2,18 +2,19 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Munger Partner Knowledge Unit",
   "type": "object",
-  "required": ["id", "status", "kind", "title", "models", "source", "review"],
+  "required": ["id", "status", "kind", "title", "corpus_ids", "models", "source", "review"],
   "properties": {
     "id": {"type": "string", "pattern": "^KU-[0-9]{4,}$"},
     "status": {"enum": ["candidate", "verified", "rejected"]},
     "kind": {"enum": ["quote", "principle", "model", "case"]},
     "title": {"type": "string", "minLength": 2},
+    "corpus_ids": {"type": "array", "items": {"type": "string", "pattern": "^CU-"}, "minItems": 1, "uniqueItems": true},
     "models": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
     "source": {
       "type": "object",
       "required": ["tier", "speaker_or_author", "title", "locator"],
       "properties": {
-        "tier": {"enum": ["primary", "secondary", "lead"]},
+        "tier": {"enum": ["A", "B", "C", "D"]},
         "speaker_or_author": {"type": "string"},
         "title": {"type": "string"},
         "date": {"type": ["string", "null"]},

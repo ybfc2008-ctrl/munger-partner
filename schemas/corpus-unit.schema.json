@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Munger Partner Corpus Unit",
+  "type": "object",
+  "required": ["id", "source_id", "verification_status", "speaker", "date", "locator", "source_level", "source_url", "original_language", "translation_status"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^CU-"},
+    "source_id": {"type": "string", "pattern": "^MTP-"},
+    "verification_status": {"enum": ["candidate", "verified", "rejected"]},
+    "speaker": {"type": "string"},
+    "date": {"type": ["string", "null"]},
+    "locator": {"type": "string"},
+    "source_level": {"enum": ["A", "B", "C", "D"]},
+    "source_url": {"type": "string"},
+    "original_language": {"type": "string"},
+    "translation_status": {"enum": ["not_needed", "ai_draft", "human_checked"]}
+  }
+}

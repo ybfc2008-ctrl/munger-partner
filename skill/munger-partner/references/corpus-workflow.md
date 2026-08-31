@@ -2,12 +2,13 @@
 
 ## 状态门
 
-`raw → candidate → verified | rejected`
+`raw → cleaner → chunker → corpus → extractor → model mapper → case matcher → candidate → critic → verifier → verified | rejected`
 
-- `raw`：原始文件，只做完整性与来源登记，不改写内容。
-- `candidate`：机器提取的候选单元，可有缺失字段和待核实标记，不可被当成权威知识。
-- `verified`：来源定位、上下文、归因、模型归并与反向审查均通过。
-- `rejected`：保留条目与拒绝理由，避免未来换名重复进入。
+- `raw/`：L0 原始文件或不可变来源记录，只做完整性、指纹与来源登记，不改写内容。
+- `corpus/`：L1 只保存原文、中文、出处、时间、位置与来源等级，不保存解释。
+- `candidates/`：机器提取的候选原理，可有缺失字段和待核实标记，不可被当成权威知识。
+- `verified/`：来源定位、上下文、归因、模型归并与反向审查均通过。
+- `rejected/`：保留条目与拒绝理由，避免未来换名重复进入。
 
 生产者不能批准自己的 Candidate。审查者应独立查看原始来源，而不是只读候选摘要。
 

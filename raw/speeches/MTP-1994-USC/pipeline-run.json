@@ -1,0 +1,15 @@
+{
+  "source_id": "MTP-1994-USC",
+  "input_file": "usc-1994-extracted.txt",
+  "raw_sha256": "55cd4dd22ea0ef2f74a8a70c323fc753db44035e967457e94b594462a5e5422b",
+  "cleaned_sha256": "47f42eaaae71679b7019998749d1e85343aa87d114d229d9b094cc5765de4653",
+  "raw_characters": 92765,
+  "cleaned_characters": 91539,
+  "cleaned_lines": 1227,
+  "chunk_count": 16,
+  "max_chars": 6000,
+  "semantic_rewriting": false,
+  "chunk_index_contains_text": false,
+  "private_outputs": ["cleaned.txt", "chunks.jsonl"],
+  "redistribution": "excluded_pending_permission"
+}

@@ -19,12 +19,17 @@
 munger-partner/
 ├── RULES.md                      # 最高规则
 ├── skill/munger-partner/         # 可安装 Codex Skill
-├── corpus/
-│   ├── raw/                      # 原始资料登记
-│   ├── candidates/               # AI 候选，不可直接引用
-│   ├── verified/                 # 审查通过
-│   └── rejected/                 # 拒绝条目及理由
+├── raw/                          # L0：不可变原始证据或其指纹
+├── corpus/                       # L1：原文、中文、出处与定位
+├── candidates/                   # AI 候选，不可直接引用
+├── verified/                     # 独立审查通过
+├── rejected/                     # 拒绝条目及理由
+├── models/                       # L2：最小核心模型集合
+├── cases/                        # L3：失败案例优先，多对多映射
+├── decision-engine/              # L4：逆向决策流程
+├── index/                        # 派生检索索引，可重建
 ├── sources/                      # Drive 与公开来源登记表
+├── reviews/                      # 独立逆向审查记录
 ├── schemas/                      # Metadata 规范
 ├── scripts/                      # 来源、语料与 Skill 校验
 └── .github/                      # 协作与纠错入口
@@ -51,9 +56,13 @@ python3 scripts/validate_sources.py
 python3 scripts/validate_corpus.py
 ```
 
-知识单元是带 JSON frontmatter 的 Markdown。复制 `templates/knowledge-unit.md` 创建候选条目；只有通过人工逆向审查并补齐 Verified 字段后，才可移动到 `corpus/verified/`。
+知识单元是带 JSON frontmatter 的 Markdown。复制 `templates/knowledge-unit.md` 创建候选条目；只有通过独立逆向审查并补齐 Verified 字段后，才可移动到 `verified/`。
+
+审查者使用 `templates/review.md`，将结论写入 `reviews/`。`verify` 只是升级建议；生产者仍须确认所有 Verified 硬条件并保留审查者身份。
 
 所有资料先登记在 [`sources/source-manifest.csv`](sources/source-manifest.csv)。它区分官方原件、可回查转录、署名笔记和二手线索；来源登记通过不等于知识条目已经验证。
+
+首个 1994 USC MVP 的范围、审查轨迹、北极星指标和剩余缺口见 [`MVP-1994-USC.md`](MVP-1994-USC.md)。
 
 ## 重要声明
 
