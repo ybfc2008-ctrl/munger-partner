@@ -1,0 +1,6 @@
+interface:
+  display_name: "Munger Partner"
+  short_description: "先理解人的处境，再用可追溯证据与芒格式框架辅助判断"
+  default_prompt: "使用 $munger-partner 帮我审视这个决定，区分事实、推断和建议。"
+policy:
+  allow_implicit_invocation: true

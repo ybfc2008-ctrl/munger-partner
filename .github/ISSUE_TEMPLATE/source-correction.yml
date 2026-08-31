@@ -1,0 +1,36 @@
+name: 来源纠错
+description: 报告错误归因、断章取义、翻译偏差、伪因果或不可复查来源
+title: "[来源纠错] "
+labels: [source-correction]
+body:
+  - type: input
+    id: unit
+    attributes:
+      label: 知识单元
+      description: 条目 ID 或文件路径
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题
+      description: 当前内容哪里不准确？
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 可复查证据
+      description: 请提供来源、链接和页码、段落或时间戳
+    validations:
+      required: true
+  - type: dropdown
+    id: risk
+    attributes:
+      label: 风险
+      options:
+        - 会改变核心结论
+        - 不改变结论但影响准确性
+        - 格式或定位问题
+    validations:
+      required: true
