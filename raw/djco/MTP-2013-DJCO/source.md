@@ -6,6 +6,7 @@
 - Drive file ID: `1G-thshGAkTISAQzQVstktutvthgYB2xm`
 - Extraction: Google Drive readable text, `83914` characters, `1091` lines.
 - Note taker/original publisher: `UNKNOWN`.
+- Public negative-provenance record: RBCPA's 2013 archive explicitly says the author was unknown; early preservation does not restore authorship.
 
 ## Evidence status
 

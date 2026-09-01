@@ -31,3 +31,9 @@ This record preserves provenance without redistributing the full transcript.
 ## Redistribution policy
 
 `link_and_excerpt`. Store only short, reviewable excerpts.
+
+## Candidate original chain (not yet verified)
+
+- Earlier full-video ID: `aciej48jbFk`; claimed Million Stories Media production ownership has not been independently confirmed.
+- Candidate transcript Drive ID: `132Aul_OH0hNP3B00S5jcIEtgAnbdV1Cq`; publisher/transcriber remains unidentified.
+- The selected excerpt has not been replayed or timestamp-aligned. These leads do not upgrade the current D level.
