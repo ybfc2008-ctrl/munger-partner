@@ -10,7 +10,7 @@
     "CU-2002-WESCO-0001",
     "CU-2015-DJCO-0001"
   ],
-  "models": [],
+  "models": ["M02"],
   "source": {
     "tier": "B",
     "speaker_or_author": "Charlie Munger",

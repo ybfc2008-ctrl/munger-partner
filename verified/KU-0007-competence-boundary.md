@@ -5,7 +5,7 @@
   "kind": "principle",
   "title": "把能力边界作为重大判断的检查项",
   "corpus_ids": ["CU-2020-CALTECH-0001", "CU-2022-DJCO-0001", "CU-2017-DJCO-0001", "CU-2003-WESCO-0001"],
-  "models": [],
+  "models": ["M03"],
   "source": {
     "tier": "B",
     "speaker_or_author": "Charlie Munger",

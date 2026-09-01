@@ -1,7 +1,7 @@
-# M03 Candidate｜能力圈边界
+# M03｜能力圈边界
 
 - English: Circle of Competence
-- Status: owner-review-ready
+- Status: owner-approved core model
 - Evidence anchor: `KU-0007`
 - Corpus span: `2003 / 2017 / 2020 / 2022`
 

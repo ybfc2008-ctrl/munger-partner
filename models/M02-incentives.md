@@ -1,7 +1,7 @@
-# M02 Candidate｜激励机制
+# M02｜激励机制
 
 - English: Incentives
-- Status: owner-review-ready
+- Status: owner-approved core model
 - Evidence anchor: `KU-0002`
 - Corpus span: `1995 / 2002 / 2015 / 2019`
 
